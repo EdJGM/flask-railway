@@ -48,29 +48,31 @@
             </script>
         </div>
         <div class="col-md-8">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">Fullname</th>
-                        <th scope="col">Phone</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for contact in contacts %}
-                    <tr>
-                        <td>{{ contact.fullname }}</td>
-                        <td>{{ contact.phone }}</td>
-                        <td>{{ contact.email }}</td>
-                        <td>
-                            <a href="/edit/{{ contact.id }}" class="btn btn-secondary btn-sm">Edit</a>
-                            <a href="/delete/{{ contact.id }}" class="btn btn-danger btn-sm btn-delete">Delete</a>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+            <div style="overflow-x:auto;">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Fullname</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for contact in contacts %}
+                        <tr>
+                            <td>{{ contact.fullname }}</td>
+                            <td>{{ contact.phone }}</td>
+                            <td>{{ contact.email }}</td>
+                            <td>
+                                <a href="/edit/{{ contact.id }}" class="btn btn-secondary btn-sm">Edit</a>
+                                <a href="/delete/{{ contact.id }}" class="btn btn-danger btn-sm btn-delete">Delete</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
