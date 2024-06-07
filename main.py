@@ -27,6 +27,7 @@ def index():
     cur = connection.cursor()
     cur.execute('SELECT * FROM contacts')
     data = cur.fetchall()
+    print(data)
     return render_template('index.html' , contacts = data)
 
 @app.route('/add_contact', methods=['GET','POST'])
