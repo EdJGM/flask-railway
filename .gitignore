@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/git,python,flask
 # Edit at https://www.toptal.com/developers/gitignore?templates=git,python,flask
 
+#various files
+.env
+
 ### Flask ###
 instance/*
 !instance/.gitignore
