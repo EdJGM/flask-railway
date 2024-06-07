@@ -3,26 +3,39 @@
 {% block content %}
 
 <div class="d-flex justify-content-center">
-    <form action="/update/{{contact.id}}" method="post" class="mt-5" style="max-width: 500px; width: 100%;">
+    <form action="/update/{{contact.id}}" method="post" class="mt-5" style="max-width: 500px; width: 100%;"
+        id="updateForm">
         <div class="form-group">
             <label for="fullname">Full Name</label>
             <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Fullname"
-                value="{{contact.fullname}}">
+                value="{{contact.fullname}}" required>
         </div>
         <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone"
-                value="{{contact.phone}}">
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" value="{{contact.phone}}"
+                required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            <small class="form-text text-muted">Format: 123-456-7890</small>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" class="form-control" id="email" name="email" placeholder="Email"
-                value="{{contact.email}}">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                value="{{contact.email}}" required>
         </div>
         <button type="submit" class="btn btn-primary">
             SAVE
         </button>
     </form>
 </div>
+
+<script>
+    document.getElementById('updateForm').addEventListener('submit', function (event) {
+        var form = event.target;
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+    }, false);
+</script>
 
 {% endblock %}
