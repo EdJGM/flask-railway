@@ -15,7 +15,7 @@ connection = pymysql.connect(
     user=os.getenv('MYSQL_USER', 'root'),
     password=os.getenv('MYSQL_PASSWORD', ''),
     db=os.getenv('MYSQL_DB', 'flaskcontacts'),
-    cursorclass=DictCursor
+    cursorclass=DictCursor,
     port=int(os.getenv('MYSQL_PORT', 35139))
 )
 
