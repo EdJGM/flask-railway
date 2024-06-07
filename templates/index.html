@@ -50,8 +50,6 @@
                         <td>{{ contact.fullname }}</td>
                         <td>{{ contact.phone }}</td>
                         <td>{{ contact.email }}</td>
-                        <!-- Add this line inside your for loop -->
-                        <p>Contact ID: {{ contact.id }}</p>
                         <td>
                             <a href="/edit/{{ contact.id }}" class="btn btn-secondary btn-sm">Edit</a>
                             <a href="/delete/{{ contact.id }}" class="btn btn-danger btn-sm btn-delete">Delete</a>
